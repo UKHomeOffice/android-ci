@@ -1,7 +1,8 @@
 FROM quay.io/digitalpatterns/jdk:latest
 
 USER root
-RUN apk add gcompat
+RUN apk add gcompat ncurses5-libs
+RUN ln -s /usr/lib/libncurses.so.5 /usr/lib/libtinfo.so.5
 ENV ANDROID_HOME=/usr/android
 
 RUN mkdir ${ANDROID_HOME} &&\
