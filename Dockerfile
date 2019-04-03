@@ -16,4 +16,5 @@ RUN yes | sdkmanager "platforms;android-28" "build-tools;27.0.3"
 
 WORKDIR /usr/appsrc
 
-ENTRYPOINT ./gradlew --info build
+ENTRYPOINT ["/bin/run.sh"]
+CMD ["echo", "foo"]
